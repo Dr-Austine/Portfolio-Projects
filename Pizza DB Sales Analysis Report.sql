@@ -1,3 +1,17 @@
+--============================================================ 
+-- Extracting the Data Set For This Project usuing SQL Server but download from this url
+-- https://docs.google.com/spreadsheets/d/1vOhANoG5q24Hb7Znq1fe89VaAOfqjXyuWxhAMAoh9RI/edit?usp=drive_link
+--============================================================
+BULK INSERT your_table_name
+FROM '/path/to/downloaded/file.csv'
+WITH (
+    FORMAT = 'CSV',
+    FIRSTROW = 2, -- if your CSV has headers
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n'
+);
+
+
 -- Total Revenue generated
 SELECT ROUND(SUM(total_price),2) AS Total_Revenue FROM pizza_sales_excel_file
 
