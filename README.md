@@ -2,7 +2,8 @@
 **Data-driven insights for finance, insurance, and geopolitical risk analysis**  
 *Leveraging Python, SQL, and BI tools to quantify business performance under global uncertainties*
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/yourprofile)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/yourprofile)  [![Tableau](https://img.shields.io/badge/📊_Tableau-Visualize-orange?style=flat&logo=tableau)](https://public.tableau.com/app/profile/austine.njuga/vizzes)
+
 📧 **Email**: austinenjoroge29@gmail.comm  
 
 ---
