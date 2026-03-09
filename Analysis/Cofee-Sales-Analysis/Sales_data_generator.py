@@ -89,9 +89,9 @@ for i in range(num_sales):
     order_id = 1000000 + i
     order_date = start_date + timedelta(days=random.randint(0,days_range))
     
-    # Realistic order times (morning/evening peaks)
+    # FIXED: Realistic order times with probabilities that sum to 1
     hour = np.random.choice([7,8,9,10,11,12,13,14,15,16,17,18],
-                            p=[0.07,0.1,0.1,0.07,0.07,0.1,0.1,0.07,0.07,0.07,0.05,0.05])
+                            p=[0.06, 0.10, 0.12, 0.08, 0.06, 0.10, 0.10, 0.08, 0.06, 0.06, 0.10, 0.08])
     minute = random.randint(0,59)
     order_time = f"{hour:02d}:{minute:02d}"
     
@@ -102,14 +102,13 @@ for i in range(num_sales):
     unit_price = product['price_usd']
     quantity = np.random.choice([1,2,3], p=[0.75,0.2,0.05])
     discount = 0
-    if random.random()<0.05:  # 5% chance of discount
-        discount = round(unit_price*0.1,2)
-    total_amount = round((unit_price*quantity)-discount,2)
+    if random.random() < 0.05:  # 5% chance of discount
+        discount = round(unit_price * 0.1, 2)
+    total_amount = round((unit_price * quantity) - discount, 2)
     
     sales_rows.append([order_id, order_date.date(), order_time, customer_id, store_id, product_id, quantity, unit_price, discount, total_amount])
 
 sales = pd.DataFrame(sales_rows, columns=['order_id','order_date','order_time','customer_id','store_id','product_id','quantity','unit_price','discount','total_amount'])
-
 # ----------------------------
 # 8️⃣ Save tables to CSV (optional)
 # ----------------------------
