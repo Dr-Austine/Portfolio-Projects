@@ -32,15 +32,19 @@ cities = pd.DataFrame({
 stores_list = []
 store_id = 1
 for idx, row in cities.iterrows():
-    num_stores_city = random.randint(3,8)  # Multiple stores per city
+    num_stores_city = random.randint(3, 8)  # Multiple stores per city
     for _ in range(num_stores_city):
         stores_list.append({
             'store_id': store_id,
             'city_id': row['city_id'],
             'store_name': f"{row['city_name']} Cafe {store_id}",
-            'store_size_sqft': random.randint(800,1500),
-            'monthly_rent_usd': random.randint(2500,7000),
-            'opening_date': fake.date_between(start_date='-3y', end_date='today')
+            'store_size_sqft': random.randint(800, 1500),
+            'monthly_rent_usd': random.randint(2500, 7000),
+            'opening_date': fake.date_between(start_date='-3y', end_date='today'),
+            'store_manager': fake.name(),                 # Manager name
+            'location': fake.address().replace("\n", ", "),  # Full address
+            'contact': fake.phone_number(),              # Phone number
+            'email': fake.company_email()                # Email address
         })
         store_id += 1
 stores = pd.DataFrame(stores_list)
