@@ -71,31 +71,70 @@ stores = pd.DataFrame(stores_list)
 # ------------------------------------------------
 # 5️⃣ Products Table (Menu Analytics)
 # ------------------------------------------------
+import pandas as pd
+
+# 2026 "High-Accuracy" Product Database
 products = pd.DataFrame({
-
-    "product_id": range(1,11),
-
-    "product_name":[
-        "Espresso","Drip Coffee","Americano","Cappuccino","Latte",
-        "Mocha","Cold Brew","Croissant","Blueberry Muffin","Banana Bread"
+    "product_id": range(1, 26),
+    "product_name": [
+        "Espresso", "Drip Coffee", "Americano", "Cappuccino", "Latte", 
+        "Mocha", "Cold Brew", "Flat White", "Nitro Cold Brew", "Caramel Macchiato",
+        "Matcha Latte", "Chai Tea Latte", "Iced Green Tea", "Strawberry Refresher", "Mango Dragonfruit Refresher",
+        "Pumpkin Spice Latte", "Peppermint Mocha", "Java Chip Frappuccino", "Vanilla Bean Crème",
+        "Butter Croissant", "Blueberry Muffin", "Banana Bread", "Chocolate Chunk Cookie",
+        "Bacon & Gouda Sandwich", "Spinach & Feta Wrap"
     ],
-
-    "category":[
-        "Coffee","Coffee","Coffee","Coffee","Coffee",
-        "Coffee","Coffee","Pastry","Pastry","Pastry"
+    "category": [
+        "Coffee", "Coffee", "Coffee", "Coffee", "Coffee", 
+        "Coffee", "Coffee", "Coffee", "Coffee", "Coffee",
+        "Tea", "Tea", "Tea", "Refresher", "Refresher",
+        "Seasonal", "Seasonal", "Blended", "Blended",
+        "Pastry", "Pastry", "Pastry", "Pastry",
+        "Breakfast", "Breakfast"
     ],
-
-    "price_usd":[3.0,3.0,3.5,5.0,5.5,5.75,5.25,4.0,3.75,3.5],
-
-    "cost_usd":[0.8,0.7,0.9,1.6,1.8,2.0,1.7,1.2,1.1,1.0],
-
-    "prep_time_seconds":[30,35,40,55,60,65,45,20,25,25],
-
-    "calories":[5,10,10,120,150,210,15,260,320,300]
+    # Prices reflect 2026 US National Averages
+    "price_usd": [
+        3.75, 3.85, 4.25, 5.45, 5.95, 
+        6.25, 5.75, 5.50, 6.50, 6.45,
+        5.95, 5.75, 4.25, 5.50, 5.75,
+        6.95, 6.95, 6.75, 5.95,
+        4.25, 4.50, 4.25, 3.75,
+        7.25, 6.95
+    ],
+    # Costs including beans, dairy/alternatives, and packaging
+    "cost_usd": [
+        0.95, 0.85, 1.10, 1.95, 2.10, 
+        2.40, 2.00, 2.05, 2.25, 2.45,
+        1.85, 1.70, 0.95, 1.45, 1.55,
+        2.75, 2.85, 2.40, 2.15,
+        1.45, 1.40, 1.30, 1.15,
+        3.15, 2.85
+    ],
+    "prep_time_seconds": [
+        45, 30, 50, 90, 100, 
+        110, 40, 95, 45, 120,
+        105, 95, 60, 75, 75,
+        130, 130, 150, 140,
+        30, 30, 30, 20,
+        180, 160
+    ],
+    "calories": [
+        5, 5, 15, 140, 190, 
+        360, 5, 170, 5, 250,
+        240, 240, 80, 100, 130,
+        390, 440, 440, 380,
+        260, 410, 420, 310,
+        370, 290
+    ]
 })
 
+# Financial Performance Metrics
 products["profit_usd"] = products["price_usd"] - products["cost_usd"]
 products["margin_pct"] = ((products["profit_usd"] / products["price_usd"]) * 100).round(2)
+
+# Quick Analysis: Sort by most profitable item
+print(products.sort_values(by="profit_usd", ascending=False).head(5))
+
 
 # ------------------------------------------------
 # 6️⃣ Customers Table
