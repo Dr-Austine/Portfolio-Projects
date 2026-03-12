@@ -139,7 +139,7 @@ print(products.sort_values(by="profit_usd", ascending=False).head(5))
 # ------------------------------------------------
 # 6️⃣ Customers Table
 # ------------------------------------------------
-num_customers = 10000
+num_customers = 44300
 
 customers = pd.DataFrame({
     "customer_id": range(10001,10001+num_customers),
@@ -155,7 +155,7 @@ customers = pd.DataFrame({
 # ------------------------------------------------
 # 7️⃣ Sales Table (Fact Table)
 # ------------------------------------------------
-num_sales = 100000
+num_sales = 869257
 
 store_ids = stores["store_id"].tolist()
 product_ids = products["product_id"].tolist()
@@ -163,8 +163,8 @@ customer_ids = customers["customer_id"].tolist()
 
 sales_rows = []
 
-start_date = datetime(2024,1,1)
-end_date = datetime(2024,12,31)
+start_date = datetime(2022,1,1)
+end_date = datetime(2025,12,31)
 days_range = (end_date - start_date).days
 
 for i in range(num_sales):
