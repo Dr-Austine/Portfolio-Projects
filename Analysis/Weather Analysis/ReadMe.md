@@ -5,7 +5,8 @@
 A real-time weather analytics dashboard built using **Power BI** and integrated with **WeatherAPI**.  
 The dashboard provides live weather updates, 7-day forecasts, and air quality insights for major Kenyan cities with automatic data refresh.
 
-![Dashboard Preview](images/dashboard-preview.png)
+![Dashboard Preview](Files/Dashboard_Preview.png)
+
 
 ---
 
