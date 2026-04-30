@@ -168,10 +168,10 @@ Avg Pizzas Per Order = DIVIDE([Total Pizzas Sold], [Total Orders])
 ## 📸 Dashboard Preview
 
 **Sales Overview Dashboard**  
-![Sales Dashboard](Images/sales_dashboard.png)
+![Sales Dashboard](Images/Monthly-Weekly-Trend.png)  
 
 **Best & Worst Sellers Dashboard**  
-![Best Worst Dashboard](Images/best_worst_dashboard.png)
+![Best Worst Dashboard](Images/Top-Bottom-Report.png)
 
 ---
 
